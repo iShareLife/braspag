@@ -1,6 +1,6 @@
 # Brapag PHP Library
 
-## Wellcome
+## Welcome
 
 Braspag for PHP aims to make life easier for developers who need to use a Brazillian gateway called Braspag via WebService. Currently the library is only implemented with transactions via credit cards. Feedbacks and collaborations will be highly appreciated.
 
