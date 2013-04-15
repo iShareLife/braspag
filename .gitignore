@@ -1,0 +1,57 @@
+#More templates at https://github.com/github/gitignore
+
+#Temporary
+.cache
+*.tmp
+tmp/**
+tmp/**/*
+*~
+#*#
+.#*
+~$*
+
+#Logs
+*.log
+
+#Databases
+*.sqlite
+
+#Zend Studio
+.project
+.buildpath
+.settings/
+local.properties
+.metadata
+*.bak
+.loadpath
+.classpath
+.externalToolBuilders/
+*.launch
+.cproject
+
+#Windows
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Mac OSX
+.DS_Store*
+.Spotlight-V100
+.Trashes
+._*
+
+# XCode 4
+*~.nib
+*.swp
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata
+
+
+#Netbeans
+/nbproject
