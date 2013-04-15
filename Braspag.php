@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * Braspag main class
+ * Used to execute WSDL methods
+ *
+ * @author Robson Morais (r.morais@isharelife.com.br)
+ * @link http://www.isharelife.com.br/
+ * @version $ID$
+ * @package opensource
+ * @copyright Copyright © 2010-2012 iShareLife
+ * @license Apache License, Version 2.0
+ *
+ */
+
 class Braspag{
 
 	private $Soap;
@@ -58,7 +71,6 @@ class Braspag{
 		require_once 'BraspagTransactionData.php';
 		require_once 'BraspagTransactionRequest.php';
 		require_once 'BraspagSaveCreditCardDataRequest.php';
-		require_once 'BraspagSaveCreditCardModel.php';
 		require_once 'BraspagGetCreditCardDataRequest.php';
 	}
 
@@ -186,22 +198,22 @@ class Braspag{
 	}
 
 
-	public function saveCreditCard(BraspagSaveCreditCardModel $SaveCreditCard, BraspagCustomerData $Customer){
+	public function saveCreditCard(BraspagCreditCardModel $CreditCard, BraspagCustomerData $Customer){
 
 		$request = new BraspagSaveCreditCardDataRequest();
 
 		$request->MerchantKey = $this->merchantKey;
-		$request->CardNumber = $SaveCreditCard->getCardNumber();
-		$request->CardHolder = $SaveCreditCard->getCardHolder();
-		$request->CardExpiration = $SaveCreditCard->getCardExpiration();
+		$request->CardNumber = $CreditCard->getCardNumber();
+		$request->CardHolder = $CreditCard->getCardHolder();
+		$request->CardExpiration = $CreditCard->getCardExpirationDate();
 
 		$request->CustomerIdentification = $Customer->getID();
 		$request->CustomerName = $Customer->getName();
 
-		if(!$SaveCreditCard->getJustClickAlias()){
+		if(!$justClickAlias = $CreditCard->getJustClickAlias()){
 			unset($request->JustClickAlias);
 		}else{
-			$request->JustClickAlias = $SaveCreditCard->justClickAlias;
+			$request->JustClickAlias = $justClickAlias;
 		}
 
 		$params = new stdClass();

@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * BraspagSetup
+ * Contains settings to Braspag class
+ *
+ * @author Robson Morais (r.morais@isharelife.com.br)
+ * @link http://www.isharelife.com.br/
+ * @version $ID$
+ * @package opensource
+ * @copyright Copyright © 2010-2012 iShareLife
+ * @license Apache License, Version 2.0
+ *
+ */
+
 class BraspagSetup {
 
 	const URL_TRANSACTION_HOMOLOGATION = "https://homologacao.pagador.com.br/webservice/pagadorTransaction.asmx?wsdl";
