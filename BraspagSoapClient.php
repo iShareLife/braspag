@@ -35,10 +35,10 @@ class BraspagSoapClient extends SoapClient{
 		$this->namespace = $namespace;
 	}
 
-	public function __doRequest($request, $location, $action, $version){
+	public function __doRequest($request, $location, $action, $version, $one_way = NULL){
 		$_action = join('', array_slice(explode('/', $action), -1));
 		$request = str_replace('<ns1:' . $_action . '>', '<ns1:' . $_action . ' xmlns="'.$this->namespace.'">', $request);
 
-		return parent::__doRequest($request, $location, $action, $version, 0);
+		return parent::__doRequest($request, $location, $action, $version, $one_way);
 	}
 }
